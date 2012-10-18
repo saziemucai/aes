@@ -18,7 +18,7 @@ if (! @mysql_connect("localhost", "root", "")) {
 
 <head>
         
-<style type="text/css">
+<style type="text/css">f
 
 a:link {
 	text-decoration: none;
@@ -45,11 +45,19 @@ a:active {
 <link href="css/demo.css" media="screen" rel="stylesheet" type="text/css" />
 <script type="text/javascript" src="lib/jquery-1.7.2.min.js"></script>
 
+	<link href="bootstrap/css/bootstrap.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="bootstrap/css/bootstrap.min.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="bootstrap/css/bootstrap-responsive.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="bootstrap/css/bootstrap-responsive.min.css" media="screen" rel="stylesheet" type="text/css" />
+	
+	<link href="bootstrap/js/bootstrap.js" media="screen" rel="stylesheet" type="text/css" />
+	<link href="bootstrap/js/bootstrap.min.js" media="screen" rel="stylesheet" type="text/css" />
+
 <body background="images/blue.png">
 
 <br><br>
    <div class="header1">
-     <a href="index.php"><font color="#fff" face="Lucida Console"><b>Logout</b></font></a>
+     <a href="index.php"><i class="icon-white icon-off"></i> <font color="#fff" face="Lucida Console"><b>Logout </b></font> </a>
 		
           <div class="clr"></div>
 		  
@@ -57,13 +65,12 @@ a:active {
 			
 			<center><img src="images/welcome.png"></center>			
 			 <div class="databox">
-			<h1><font color="#000"><?php echo $_SESSION['SESS_NAME'];?></font></h1>
+			<h2><center><font color="#000"><?php echo $_SESSION['SESS_NAME'];?></font></center></h2>
 			
-			<h3><?php echo $_SESSION['SESS_IDNO'];?>, <?php echo $_SESSION['SESS_COURSE'];?> - <?php echo $_SESSION['SESS_YEAR'];?></h3> 
-			
+			<h3><?php echo $_SESSION['SESS_IDNO'];?>, <?php echo $_SESSION['SESS_COURSE'];?> - <?php echo $_SESSION['SESS_YEAR'];?></h3> 			
 			<h3><?php echo $_SESSION['SESS_SUBJECT'];?> - <?php echo $_SESSION['SESS_SECTION'];?>, <?php echo $_SESSION['SESS_SY'];?> - <?php echo $_SESSION['SESS_SEM'];?></h3>
 			</div>
-			<div class="container">
+			<div class="lol-container">
 			<div class="main">
                 <!-- FIFTH EXAMPLE -->
                 <div class="view view-fifth">
@@ -150,12 +157,6 @@ while($row = mysql_fetch_array($finalsexamresults)){
 														  }
 			?></strong></h2>
                         
-                    </div>
-                </div>
-               
-                </div>
-            </div>
-        </div> 
-			
+                    </div></div></div></div></div> 			
 </body>
 </html>

@@ -13,6 +13,14 @@
 	<link href="css/studentprofile.css" media="screen" rel="stylesheet" type="text/css" />
 	<link href="facebox/facebox.css" media="screen" rel="stylesheet" type="text/css" />
 	
+	<link href="bootstrap/css/bootstrap.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="bootstrap/css/bootstrap.min.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="bootstrap/css/bootstrap-responsive.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="bootstrap/css/bootstrap-responsive.min.css" media="screen" rel="stylesheet" type="text/css" />
+	
+	<link href="bootstrap/js/bootstrap.js" media="screen" rel="stylesheet" type="text/css" />
+	<link href="bootstrap/js/bootstrap.min.js" media="screen" rel="stylesheet" type="text/css" />
+	
 </head>
 
 <script src="lib/jquery.js" type="text/javascript"></script>
@@ -76,7 +84,7 @@ a:active {
 <?php include('config1.php'); ?>
 <br><br>
    <div class="header">
-     <a href="teacher-index.php"><strong><font color="#fff" face="Lucida Console">Logout &nbsp;&nbsp;</font></strong></a>
+     <a href="teacher-index.php"><i class="icon-white icon-off"></i> <strong><font color="#fff" face="Lucida Console">Logout &nbsp;&nbsp;</font></strong></a>
 		
           <div class="clr"></div>
 		  </div>	

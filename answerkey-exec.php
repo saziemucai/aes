@@ -16,7 +16,7 @@ for($count=1; $count<=$num_ans; $count++)
 {
     $answer=$_POST['answer'][($count+1)-1];
 	$points=$_POST['points'][($count+1)-1];
-   mysql_query("INSERT INTO paper (id, sy, sem, subject, test_name, question, option1, option2, option3, option4, answer, points) VALUES ('$count', '$sy', '$sem', '$subject', '$test_name', 'Number $count', 'A', 'B', 'C', 'D','$answer', $points)"); 
+   mysql_query("INSERT INTO paper (id, idd, sy, sem, subject, test_name, question, num_ans, option1, option2, option3, option4, answer, points) VALUES ('$id','$count', '$sy', '$sem', '$subject', '$test_name', 'Number $count', '$num_ans', 'A', 'B', 'C', 'D','$answer', '$points')"); 
    
    }
    

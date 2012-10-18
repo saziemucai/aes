@@ -1,4 +1,4 @@
-i<!--para sa add data sa textbox -->
+<!--para sa add data sa textbox -->
 	<SCRIPT language="javascript">
 <!--
 
@@ -66,7 +66,7 @@ function addCombo() {
               echo '</tr>';
               echo '<tr>';
                 echo '<td valign="top"><div align="right"></div></td>';
-                echo '<td><input name="Input" type="submit" value="Save" /></td>';
+                echo '<td> <input type="submit" value="save" id="button1" class="button"></td>';
               echo '</tr>';
             echo '</table>';
 			

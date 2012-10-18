@@ -5,9 +5,12 @@ body{
 	font-family: 'Oswald', Arial, sans-serif;
 	font-size: 13px;
 }
-.container{
+.lol-container{
 	position:relative;
+	margin: 0px;
+	padding: 0px;
 }
+
 a{
 	color: #fff;
 	text-decoration: none;
@@ -19,6 +22,7 @@ a{
 	position:relative;
     width:780px;
     margin: 0 auto;
+	
 }
 h1{
 	margin:0px;

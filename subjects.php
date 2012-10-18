@@ -18,27 +18,27 @@
 			echo '<table width="200" border="0" cellpadding="0">';
 				echo '<tr>';
 				echo '<td width="87" valign="top"><div align="left">S.Y.</div></td>';
-                echo '<td width="281"><div align="left"><input type="text" name="sy" value="" required="required"></div></td>';
+                echo '<td width="281"><div align="left"><input type="text" name="sy" value="" required="required" style="width:110px;"></div></td>';
 				echo '</tr>';
 				echo '<tr>';
 				echo '<td width="87" valign="top"><div align="left">Semester:</div></td>';
-                echo '<td width="281"><div align="left"><input type="text" name="sem" value="" required="required"></div></td>';
-				echo '</tr>';
+                echo '<td width="281"><div align="left"><input type="text" name="sem" value="" required="required" style="width:110px;"></div></td>';
+				echo '</tr>'; 
 				echo '<tr>';
                 echo '<td width="87" valign="top"><div align="left">Subject:</div></td>';
-                echo '<td width="281"><div align="left"><input type="text" name="subject" value="" required="required"></div></td>';
+                echo '<td width="281"><div align="left"><input type="text" name="subject" value="" required="required" style="width:110px;"></div></td>';
 				echo '</tr>';
 				echo '<tr>';
 				echo '<td width="87" valign="top"><div align="left">Section1:</div></td>';
-				echo '<td width="281"><div align="left"><input type="text" name="section1" value=""></div></td>'; 
+				echo '<td width="281"><div align="left"><input type="text" name="section1" value="" style="width:110px;"></div></td>'; 
 				echo '</tr>';
 				echo '<tr>';
 				echo '<td width="87" valign="top"><div align="left">Section2:</div></td>';
-				echo '<td width="281"><div align="left"><input type="text" name="section2" value=""></div></td>';
+				echo '<td width="281"><div align="left"><input type="text" name="section2" value="" style="width:110px;"></div></td>';
 				echo '</tr>';
 				echo '<tr>';
 				echo '<td width="87" valign="top"><div align="left">Section3:</div></td>';
-				echo '<td width="281"><div align="left"><input type="text" name="section3" value=""></div></td>';
+				echo '<td width="281"><div align="left"><input type="text" name="section3" value="" style="width:110px;"></div></td>';
               echo '</tr>';
               
               

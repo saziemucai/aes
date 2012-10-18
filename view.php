@@ -9,7 +9,7 @@
 			   include('config1.php');
 		$result = mysql_query("SELECT * FROM subjects");
 								
-				echo '<select id="sy"  name="sy" required="required" style="width:100px;">';
+				echo '<select id="sy"  name="sy" required="required" style="width:130px;">';
 echo "<option></option> ";				
 								while($row = mysql_fetch_array($result))
 								  {
@@ -19,7 +19,7 @@ echo "<option></option> ";
 }
 echo '</select>'; ?><br><br>
 
-<span>Semester:</span> <select id="sem" name="sem" required="required" style="width:100px;"> 
+<span>Semester:</span> <select id="sem" name="sem" required="required" style="width:130px;"> 
 			<option></option> 	
 		<option>1st Semester</option>
 		<option>2nd Semester</option>`
@@ -30,7 +30,7 @@ echo '</select>'; ?><br><br>
 			   include('config1.php');
 		$result = mysql_query("SELECT * FROM subjects");
 								
-				echo '<select id="subject"  name="subject" required="required" style="width:100px;">';
+				echo '<select id="subject"  name="subject" required="required" style="width:130px;">';
 echo "<option></option> ";				
 								while($row = mysql_fetch_array($result))
 								  {
@@ -40,7 +40,7 @@ echo "<option></option> ";
 }
 echo '</select>'; ?> </br></br>
 
-<span> Answer Key for:</span> <select id="test_name" name="test_name" required="required" style="width:100px;"> 
+<span> Answer Key for:</span> <select id="test_name" name="test_name" required="required" style="width:130px;"> 
 			<option></option> 	 
 		<option>Prelim</option>
 		<option>Midterm</option>
@@ -48,9 +48,7 @@ echo '</select>'; ?> </br></br>
 		</select><br><br>
 		
 <p align="right">
-<input type="submit" name="SUBMIT" class="button1" value="VIEW" style="font: bold 14px Arial; -webkit-border-radius:3px; 
- -moz-border-radius:3px; border-radius:3px; width: 50px; background: #000;  border-color: #000; color: #fff; -moz-box-shadow: 1px 0px 2px #000;
-	-webkit-box-shadow: 1px 0px 2px #000; 	box-shadow: 1px 0px 2px #000; "/>&nbsp;&nbsp;&nbsp;</p>
+<input type="submit" value="view" id="button1" class="button">&nbsp;&nbsp;&nbsp;</p>
 	
 </form>
 

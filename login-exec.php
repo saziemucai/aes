@@ -80,7 +80,7 @@
 			
 		}else {
 			//Login failed
-			header("location: login-failed2.php");
+			header("location: login-failed.php");
 			exit();
 		}
 	}else {

@@ -13,6 +13,14 @@
 	<link href="css/studentprofile.css" media="screen" rel="stylesheet" type="text/css" />
 	<link href="facebox/facebox.css" media="screen" rel="stylesheet" type="text/css" />
 	
+	<link href="bootstrap/css/bootstrap.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="bootstrap/css/bootstrap.min.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="bootstrap/css/bootstrap-responsive.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="bootstrap/css/bootstrap-responsive.min.css" media="screen" rel="stylesheet" type="text/css" />
+	
+	<link href="bootstrap/js/bootstrap.js" media="screen" rel="stylesheet" type="text/css" />
+	<link href="bootstrap/js/bootstrap.min.js" media="screen" rel="stylesheet" type="text/css" />
+	
 </head>
 
 <script src="lib/jquery.js" type="text/javascript"></script>
@@ -55,7 +63,7 @@ a:active {
 <?php include('config1.php'); ?>
 <br><br>
    <div class="header">
-     <a href="teacher-index.php"><strong><font color="#fff" face="Lucida Console">Logout &nbsp;&nbsp;</font></strong></a>
+     <a href="teacher-index.php"><i class="icon-white icon-off"></i> <strong><font color="#fff" face="Lucida Console">Logout &nbsp;&nbsp;</font></strong></a>
 		
           <div class="clr"></div>
 		  </div>	
@@ -129,16 +137,16 @@ echo "Test Name: <b> Finals"."</b>"; echo "</br></br>";
 	while($i < $num){
         $field = array($i => mysql_result($result,$i,"question"));
         $j = $i + 1;
-        echo "&nbsp; &nbsp; $field[$i]";
-        echo ("<label>
+        echo "&nbsp; &nbsp; $field[$i]: &nbsp;&nbsp;&nbsp;&nbsp;";
+        echo ("
       <input type='radio' name='answer[$i]' value='A' id='answer'>
-      A</label><label>
+      &nbsp;&nbsp;&nbsp;&nbsp;A&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 	  <input type='radio' name='answer[$i]' value='B' id='answer'>
-      B</label><label>
+      &nbsp;&nbsp;&nbsp;&nbsp;B&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 	  <input type='radio' name='answer[$i]' value='C' id='answer'>
-      C</label><label>
+      &nbsp;&nbsp;&nbsp;&nbsp;C&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
       <input type='radio' name='answer[$i]' value='D' id='answer'>
-     D</label><br><br>");
+     &nbsp;&nbsp;&nbsp;&nbsp;D<br><br>");
     $i++;   
     }
 mysql_query("INSERT INTO student_answer (idno, sy, sem, subject, test_name, score, num_ans) VALUES ('$idno', '$sy', '$sem', '$subject', '$test_name', '$correctAns', '$row[0]')");

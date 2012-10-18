@@ -13,6 +13,14 @@
 	<link href="css/studentprofile.css" media="screen" rel="stylesheet" type="text/css" />
 	<link href="facebox/facebox.css" media="screen" rel="stylesheet" type="text/css" />
 	
+	<link href="bootstrap/css/bootstrap.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="bootstrap/css/bootstrap.min.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="bootstrap/css/bootstrap-responsive.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="bootstrap/css/bootstrap-responsive.min.css" media="screen" rel="stylesheet" type="text/css" />
+	
+	<link href="bootstrap/js/bootstrap.js" media="screen" rel="stylesheet" type="text/css" />
+	<link href="bootstrap/js/bootstrap.min.js" media="screen" rel="stylesheet" type="text/css" />
+	
 </head>
 
 <script src="lib/jquery.js" type="text/javascript"></script>
@@ -63,7 +71,7 @@ a:active {
                 //loop through to add the number of fields specified
                 for (count=1;count<=num;count++) {
                     //concatinate number of fields to a variable
-                    html += '&nbsp;&nbsp;<input type="text" name="points['+ count +']" id="points['+ count +']" style="width:20px;"> &nbsp;Answer ' + count + ':<input type="radio" name="answer['+ count +']" id="answer['+ count +']" value="A"/>A&nbsp;&nbsp;&nbsp;<input type="radio" name="answer[' + count + ']" id="answer[' + count + ']" value="B"/>B&nbsp;&nbsp;&nbsp;<input type="radio"  name="answer[' + count + ']" id="answer[' + count + ']" value="C"/>C&nbsp;&nbsp;&nbsp;<input type="radio"  name="answer[' + count + ']" id="answer[' + count + ']" value="D"/>D<input checked="checked" type="radio" name="answer['+ count +	']" value="NONE" style="display:none;" />&nbsp;&nbsp;&nbsp<br><br/>';
+                    html += '&nbsp;&nbsp;<input type="text" name="points['+ count +']" id="points['+ count +']" style="width:20px;"> &nbsp;Answer ' + count + ':&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="answer['+ count +']" id="answer['+ count +']" value="A"/>&nbsp;&nbsp;&nbsp;&nbsp;A&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="answer[' + count + ']" id="answer[' + count + ']" value="B"/>&nbsp;&nbsp;&nbsp;&nbsp;B&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio"  name="answer[' + count + ']" id="answer[' + count + ']" value="C"/>&nbsp;&nbsp;&nbsp;&nbsp;C&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio"  name="answer[' + count + ']" id="answer[' + count + ']" value="D"/>&nbsp;&nbsp;&nbsp;&nbsp;D<input checked="checked" type="radio" name="answer['+ count +	']" value="NONE" style="display:none;" />&nbsp;&nbsp;&nbsp<br><br/>';
                 }
 
                 //insert this html code into the div with id ansList
@@ -76,7 +84,7 @@ a:active {
 <?php include('config1.php'); ?>
 <br><br>
    <div class="header">
-     <a href="teacher-index.php"><strong><font color="#fff" face="Lucida Console">Logout &nbsp;&nbsp;</font></strong></a>
+     <a href="teacher-index.php"><i class="icon-white icon-off"></i> <strong><font color="#fff" face="Lucida Console">Logout &nbsp;&nbsp;</font></strong></a>
 		
           <div class="clr"></div>
 		  </div>	

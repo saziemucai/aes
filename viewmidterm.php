@@ -1,16 +1,19 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
-<link href="style2.css" rel="stylesheet" type="text/css" media="screen" />
-<form id="shw" name="show" method="post" action="exe2.php" >
+
+<link href="facebox/facebox.css" media="screen" rel="stylesheet" type="text/css" />
+
+<form id="show" name="show" method="post" action="exe2.php" >
+<form id= "showw" name="showw" method="post" action="student-answer.php">
 
 <div class="view">
 	
-		<span>Student ID No:</span> <input type="text" id="idno" name="idno" class="input_text1" required="required" style="width:80px;"> <br><br>
+		<span>Student ID No:</span> <input type="text" id="idno" name="idno" class="input_text1" required="required" style="width:110px;"> <br><br>
 		<span>School Year:</span> <?php
 			   include('config1.php');
 		$result = mysql_query("SELECT * FROM subjects");
 								
-				echo '<select id="sy"  name="sy" class="dropdown1" required="required" style="width:93px;">';	
+				echo '<select id="sy"  name="sy" class="dropdown1" required="required" style="width:125px">';	
 echo "";							
 							while($row = mysql_fetch_array($result))
 								  {
@@ -21,7 +24,7 @@ echo "";
 }
 echo '</select>'; ?> <br><br>  
 		
-	<span>Semester:</span><select id="sem" name="sem" required="required" style="width:93px;"> 
+	<span>Semester:</span><select id="sem" name="sem" required="required" style="width:125px"> 
 			<option></option> 	
 		<option>1st Semester</option>
 		<option>2nd Semester</option>`
@@ -32,7 +35,7 @@ echo '</select>'; ?> <br><br>
 			   include('config1.php');
 		$result = mysql_query("SELECT * FROM subjects");
 								
-				echo '<select id="subject"  name="subject" class="dropdown1" required="required" style="width:93px;">';	
+				echo '<select id="subject"  name="subject" class="dropdown1" required="required" style="width:125px">';	
 echo "";							
 							while($row = mysql_fetch_array($result))
 								  {
@@ -42,7 +45,7 @@ echo "";
 }
 echo '</select>'; ?> <br><br>
 
-
+		
 
 <p align="right">
  <input type="submit" value="view" id="button1"></p>

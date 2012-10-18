@@ -14,6 +14,14 @@
 	<link href="css/studentprofile.css" media="screen" rel="stylesheet" type="text/css" />
 	<link href="facebox/facebox.css" media="screen" rel="stylesheet" type="text/css" />
 	
+	<link href="bootstrap/css/bootstrap.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="bootstrap/css/bootstrap.min.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="bootstrap/css/bootstrap-responsive.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="bootstrap/css/bootstrap-responsive.min.css" media="screen" rel="stylesheet" type="text/css" />
+	
+	<link href="bootstrap/js/bootstrap.js" media="screen" rel="stylesheet" type="text/css" />
+	<link href="bootstrap/js/bootstrap.min.js" media="screen" rel="stylesheet" type="text/css" />
+	
 </head>
 
 <script src="lib/jquery.js" type="text/javascript"></script>
@@ -50,6 +58,23 @@ a:active {
 
 </style>
 
+
+  <style type="text/css" title="currentStyle">
+		
+			@import "css/demo_table_jui.css";
+			@import "js/smoothness/jquery-ui-1.8.4.custom.css";
+		</style>
+		
+				<script type="text/javascript" language="javascript" src="js/jquery.dataTables.js"></script>
+		<script type="text/javascript" charset="utf-8">
+			$(document).ready(function() {
+				oTable = $('#example').dataTable({
+					"bJQueryUI": true,
+					"sPaginationType": "full_numbers"
+				});
+			} );
+		</script>
+		
  <script type="text/javascript" src="lib/jquery-1.7.2.min.js" ></script>
     <script type="text/javascript">
         //when the webpage has loaded do this
@@ -64,7 +89,7 @@ a:active {
                 //loop through to add the number of fields specified
                 for (count=1;count<=num;count++) {
                     //concatinate number of fields to a variable
-                    html += '&nbsp;&nbsp;<input type="text" name="points['+ count +']" id="points['+ count +']" style="width:20px;"> &nbsp;Answer ' + count + ':<input type="radio" name="answer['+ count +']" id="answer['+ count +']" value="A"/>A&nbsp;&nbsp;&nbsp;<input type="radio" name="answer[' + count + ']" id="answer[' + count + ']" value="B"/>B&nbsp;&nbsp;&nbsp;<input type="radio"  name="answer[' + count + ']" id="answer[' + count + ']" value="C"/>C&nbsp;&nbsp;&nbsp;<input type="radio"  name="answer[' + count + ']" id="answer[' + count + ']" value="D"/>D<input checked="checked" type="radio" name="answer['+ count +	']" value="NONE" style="display:none;" />&nbsp;&nbsp;&nbsp<br><br/>';
+                    html += '&nbsp;&nbsp;<input type="text" name="points['+ count +']" id="points['+ count +']" style="width:20px;"> &nbsp;Answer ' + count + ':&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="answer['+ count +']" id="answer['+ count +']" value="A"/>&nbsp;&nbsp;&nbsp;&nbsp;A&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="answer[' + count + ']" id="answer[' + count + ']" value="B"/>&nbsp;&nbsp;&nbsp;&nbsp;B&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio"  name="answer[' + count + ']" id="answer[' + count + ']" value="C"/>&nbsp;&nbsp;&nbsp;&nbsp;C&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio"  name="answer[' + count + ']" id="answer[' + count + ']" value="D"/>&nbsp;&nbsp;&nbsp;&nbsp;D<input checked="checked" type="radio" name="answer['+ count +	']" value="NONE" style="display:none;" />&nbsp;&nbsp;&nbsp<br><br/>';
                 }
 
                 //insert this html code into the div with id ansList
@@ -78,7 +103,7 @@ a:active {
 <br><br>
 
    <div class="header">
-     <a href="teacher-index.php"><strong><font color="#fff" face="Lucida Console">Logout &nbsp;&nbsp;</font></strong></a>
+     <a href="teacher-index.php"><i class="icon-white icon-off"></i> <strong><font color="#fff" face="Lucida Console">Logout &nbsp;&nbsp;</font></strong></a>
 		
           <div class="clr"></div>
 		  </div>	
@@ -106,9 +131,9 @@ a:active {
 					<center><a rel="facebox" href=view.php?id=' . $row["id"] . '>
 					<button style="width:140px; height:30px;"><b><font color="#003366">VIEW ANSWER KEY</font></b></button></a></center><br>
 					
-						<span>School Year:</span><input type="text" id="sy" name="sy" required="required" style="width:100px;"> <br><br>
+						<span>School Year:</span><input type="text" id="sy" name="sy" required="required" style="width:113px;"> <br><br>
 		
-						<span>Semester:</span><select id="sem" name="sem" required="required" style="width:112px;"> 
+						<span>Semester:</span><select id="sem" name="sem" required="required" style="width:125px"> 
 							<option></option> 	
 							<option>1st Semester</option>
 							<option>2nd Semester</option>
@@ -119,7 +144,7 @@ a:active {
 						include('config1.php');
 							$result = mysql_query("SELECT * FROM subjects");
 								
-								echo '<select id="subject"  name="subject" required="required" style="width:112px;">';
+								echo '<select id="subject"  name="subject" required="required" style="width:125px">';
 								echo "<option></option> ";				
 									while($row = mysql_fetch_array($result))
 									{
@@ -129,14 +154,14 @@ a:active {
 									}
 								echo '</select>'; ?> </br></br>
 	
-					<span>Answer Key for:</span> <select id="test_name" name="test_name" required="required" style="width:112px;"> 
+					<span>Answer Key for:</span> <select id="test_name" name="test_name" required="required" style="width:125px"> 
 						<option></option> 	 
 						<option>Prelim</option>
 						<option>Midterm</option>
 						<option>Finals</option>
 						</select><br><br>
 					
-					# items required: <input type="text" id="num_ans" name="num_ans" required="required" style="width:92px;">     <br><br>
+					# items required: <input type="text" id="num_ans" name="num_ans" required="required" style="width:103px;">     <br><br>
 					
 				</font>       
 	 <center>
@@ -148,8 +173,27 @@ a:active {
  </font>
 
 	<br>
-	<font size="2" color="black" face="Verdana">
-		  <div id="ansList" class="leftchoice"></div>
+				<div id="dt_example">
+				<div id="container">
+				<div class="demo_jui">
+				<div class="leftchoice">
+				
+				<table cellpadding="0" cellspacing="0" border="0" class="display" id="example" style="width:500px;">
+				<thead>
+				<tr>
+				<th><font color="black"  size="2">Points</th>
+				<th><font color="black"  size="2">Item No.</th>
+				<th><font color="black"  size="2">Option 1</th>
+				<th><font color="black"  size="2">Option 2</th>
+				<th><font color="black"  size="2">Option 3</th>
+				<th><font color="black"  size="2">Option4</th>
+				
+				</tr>
+	</thead>
+	<tbody>
+	<div id="ansList" class="leftchoice">
+	</tbody>
+	</div></div></div>
 
 	
     </form>

@@ -32,13 +32,17 @@ div.databox h1{
 
 div.databox h3{
 	
-	font-size:16px;
-	color:#000;
-    text-shadow:1px 1px 1px #fff;
+	font-size:18px;
+	color:#fff;
+    text-shadow:1px 1px 1px #000;
 	text-align:left;
 	font-weight:400;
     text-align:center;
-
+	line-height: 10px;
+	background-color: #000;
+	height: 10px;
+	padding: 10px;
+	opacity: 0.3;
 }
 
 div.button
@@ -126,7 +130,7 @@ position:block;
  }
  
  div.header{
-	margin-top: -52px;
+	margin-top: -40px;
 	font-family:'Arial Narrow', Arial, sans-serif;
 	line-height: 24px;
 	background: #000;
@@ -142,7 +146,7 @@ position:block;
 }
 
 div.header1{
-	margin-top: -3px;
+	margin-top: -40px;
 	font-family:'Arial Narrow', Arial, sans-serif;
 	line-height:24px;
 	background: #000;

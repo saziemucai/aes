@@ -8,12 +8,12 @@
 
 <div class="view">
 	
-		<span>Student ID No:</span> <input type="text" id="idno" name="idno" class="input_text1" required="required" style="width:80px;"> <br><br>
+		<span>Student ID No:</span> <input type="text" id="idno" name="idno" class="input_text1" required="required" style="width:110px;"> <br><br>
 		<span>School Year:</span> <?php
 			   include('config1.php');
 		$result = mysql_query("SELECT * FROM subjects");
 								
-				echo '<select id="sy"  name="sy" class="dropdown1" required="required" style="width:93px;">';	
+				echo '<select id="sy"  name="sy" class="dropdown1" required="required" style="width:125px">';	
 echo "";							
 							while($row = mysql_fetch_array($result))
 								  {
@@ -24,7 +24,7 @@ echo "";
 }
 echo '</select>'; ?> <br><br>  
 		
-	<span>Semester:</span><select id="sem" name="sem" required="required" style="width:93px;"> 
+	<span>Semester:</span><select id="sem" name="sem" required="required" style="width:125px"> 
 			<option></option> 	
 		<option>1st Semester</option>
 		<option>2nd Semester</option>`
@@ -35,7 +35,7 @@ echo '</select>'; ?> <br><br>
 			   include('config1.php');
 		$result = mysql_query("SELECT * FROM subjects");
 								
-				echo '<select id="subject"  name="subject" class="dropdown1" required="required" style="width:93px;">';	
+				echo '<select id="subject"  name="subject" class="dropdown1" required="required" style="width:125px">';	
 echo "";							
 							while($row = mysql_fetch_array($result))
 								  {
