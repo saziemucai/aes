@@ -58,23 +58,6 @@ a:active {
 
 </style>
 
-
-  <style type="text/css" title="currentStyle">
-		
-			@import "css/demo_table_jui.css";
-			@import "js/smoothness/jquery-ui-1.8.4.custom.css";
-		</style>
-		
-				<script type="text/javascript" language="javascript" src="js/jquery.dataTables.js"></script>
-		<script type="text/javascript" charset="utf-8">
-			$(document).ready(function() {
-				oTable = $('#example').dataTable({
-					"bJQueryUI": true,
-					"sPaginationType": "full_numbers"
-				});
-			} );
-		</script>
-		
  <script type="text/javascript" src="lib/jquery-1.7.2.min.js" ></script>
     <script type="text/javascript">
         //when the webpage has loaded do this
@@ -89,7 +72,7 @@ a:active {
                 //loop through to add the number of fields specified
                 for (count=1;count<=num;count++) {
                     //concatinate number of fields to a variable
-                    html += '&nbsp;&nbsp;<input type="text" name="points['+ count +']" id="points['+ count +']" style="width:20px;"> &nbsp;Answer ' + count + ':&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="answer['+ count +']" id="answer['+ count +']" value="A"/>&nbsp;&nbsp;&nbsp;&nbsp;A&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="answer[' + count + ']" id="answer[' + count + ']" value="B"/>&nbsp;&nbsp;&nbsp;&nbsp;B&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio"  name="answer[' + count + ']" id="answer[' + count + ']" value="C"/>&nbsp;&nbsp;&nbsp;&nbsp;C&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio"  name="answer[' + count + ']" id="answer[' + count + ']" value="D"/>&nbsp;&nbsp;&nbsp;&nbsp;D<input checked="checked" type="radio" name="answer['+ count +	']" value="NONE" style="display:none;" />&nbsp;&nbsp;&nbsp<br><br/>';
+                   html += '&nbsp;&nbsp;<input type="text" name="points['+ count +']" id="points['+ count +']" style="width:20px;"> &nbsp;Answer ' + count + ':&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="answer['+ count +']" id="answer['+ count +']" value="A"/>&nbsp;&nbsp;&nbsp;&nbsp;A&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="answer[' + count + ']" id="answer[' + count + ']" value="B"/>&nbsp;&nbsp;&nbsp;&nbsp;B&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio"  name="answer[' + count + ']" id="answer[' + count + ']" value="C"/>&nbsp;&nbsp;&nbsp;&nbsp;C&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio"  name="answer[' + count + ']" id="answer[' + count + ']" value="D"/>&nbsp;&nbsp;&nbsp;&nbsp;D<input checked="checked" type="radio" name="answer['+ count +	']" value="NONE" style="display:none;" />&nbsp;&nbsp;&nbsp<br><br/>';
                 }
 
                 //insert this html code into the div with id ansList
@@ -131,10 +114,22 @@ a:active {
 					<center><a rel="facebox" href=view.php?id=' . $row["id"] . '>
 					<button style="width:140px; height:30px;"><b><font color="#003366">VIEW ANSWER KEY</font></b></button></a></center><br>
 					
-						<span>School Year:</span><input type="text" id="sy" name="sy" required="required" style="width:113px;"> <br><br>
-		
-						<span>Semester:</span><select id="sem" name="sem" required="required" style="width:125px"> 
-							<option></option> 	
+						<span>School Year:</span>
+						<?php
+						include('config1.php');
+							$result = mysql_query("SELECT * FROM subjects");
+								
+								echo '<select id="sy"  name="sy" required="required" style="width:125px;">';
+											
+									while($row = mysql_fetch_array($result))
+									{
+										$sy= $row['sy'];
+											echo "<option value='$sy'>$sy</option>";
+																
+									}
+								echo '</select>'; ?> </br></br>
+								
+						<span>Semester:</span><select id="sem" name="sem" required="required" style="width:125px;"> 	
 							<option>1st Semester</option>
 							<option>2nd Semester</option>
 							<option>Summer</option>
@@ -144,8 +139,8 @@ a:active {
 						include('config1.php');
 							$result = mysql_query("SELECT * FROM subjects");
 								
-								echo '<select id="subject"  name="subject" required="required" style="width:125px">';
-								echo "<option></option> ";				
+								echo '<select id="subject"  name="subject" required="required" style="width:125px;">';
+											
 									while($row = mysql_fetch_array($result))
 									{
 										$subject= $row['subject'];
@@ -154,14 +149,13 @@ a:active {
 									}
 								echo '</select>'; ?> </br></br>
 	
-					<span>Answer Key for:</span> <select id="test_name" name="test_name" required="required" style="width:125px"> 
-						<option></option> 	 
+					<span>Answer Key for:</span> <select id="test_name" name="test_name" required="required" style="width:125px;"> 	 
 						<option>Prelim</option>
 						<option>Midterm</option>
 						<option>Finals</option>
 						</select><br><br>
 					
-					# items required: <input type="text" id="num_ans" name="num_ans" required="required" style="width:103px;">     <br><br>
+					# items required: <input type="text" id="num_ans" name="num_ans" required="required" style="width:102px;">     <br><br>
 					
 				</font>       
 	 <center>
@@ -173,27 +167,8 @@ a:active {
  </font>
 
 	<br>
-				<div id="dt_example">
-				<div id="container">
-				<div class="demo_jui">
-				<div class="leftchoice">
-				
-				<table cellpadding="0" cellspacing="0" border="0" class="display" id="example" style="width:500px;">
-				<thead>
-				<tr>
-				<th><font color="black"  size="2">Points</th>
-				<th><font color="black"  size="2">Item No.</th>
-				<th><font color="black"  size="2">Option 1</th>
-				<th><font color="black"  size="2">Option 2</th>
-				<th><font color="black"  size="2">Option 3</th>
-				<th><font color="black"  size="2">Option4</th>
-				
-				</tr>
-	</thead>
-	<tbody>
-	<div id="ansList" class="leftchoice">
-	</tbody>
-	</div></div></div>
+	<font size="2" color="black" face="Verdana">
+		  <div id="ansList" class="leftchoice"></div>
 
 	
     </form>

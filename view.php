@@ -9,8 +9,7 @@
 			   include('config1.php');
 		$result = mysql_query("SELECT * FROM subjects");
 								
-				echo '<select id="sy"  name="sy" required="required" style="width:130px;">';
-echo "<option></option> ";				
+				echo '<select id="sy"  name="sy" required="required" style="width:130px;">';			
 								while($row = mysql_fetch_array($result))
 								  {
 									$sy= $row['sy'];
@@ -20,7 +19,6 @@ echo "<option></option> ";
 echo '</select>'; ?><br><br>
 
 <span>Semester:</span> <select id="sem" name="sem" required="required" style="width:130px;"> 
-			<option></option> 	
 		<option>1st Semester</option>
 		<option>2nd Semester</option>`
 		<option>Summer</option>
@@ -30,8 +28,7 @@ echo '</select>'; ?><br><br>
 			   include('config1.php');
 		$result = mysql_query("SELECT * FROM subjects");
 								
-				echo '<select id="subject"  name="subject" required="required" style="width:130px;">';
-echo "<option></option> ";				
+				echo '<select id="subject"  name="subject" required="required" style="width:130px;">';	
 								while($row = mysql_fetch_array($result))
 								  {
 									$subject= $row['subject'];
@@ -40,8 +37,7 @@ echo "<option></option> ";
 }
 echo '</select>'; ?> </br></br>
 
-<span> Answer Key for:</span> <select id="test_name" name="test_name" required="required" style="width:130px;"> 
-			<option></option> 	 
+<span> Answer Key for:</span> <select id="test_name" name="test_name" required="required" style="width:130px;">  
 		<option>Prelim</option>
 		<option>Midterm</option>
 		<option>Finals</option>

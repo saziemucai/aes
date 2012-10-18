@@ -153,7 +153,8 @@ echo "Test Name: <b> Prelim"."</b>"; echo "</br></br>";
  
     echo("</form>");
     echo("<br>");
-	mysql_query("INSERT INTO student_answer (idno, sy, sem, subject, test_name, score, num_ans) VALUES ('$idno', '$sy', '$sem', '$subject', '$test_name', '$correctAns', '$row[0]')");
+		mysql_query("INSERT INTO temp (idno, sy, sem, subject, test_name, student_name, num) VALUES ('$idno', '$sy', '$sem', '$subject', '$test_name', '$student_name', '$num')");
+	
 	
 	
 	

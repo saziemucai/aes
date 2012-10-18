@@ -25,7 +25,7 @@ echo "";
 echo '</select>'; ?> <br><br>  
 		
 	<span>Semester:</span><select id="sem" name="sem" required="required" style="width:125px"> 
-			<option></option> 	
+			
 		<option>1st Semester</option>
 		<option>2nd Semester</option>`
 		<option>Summer</option>

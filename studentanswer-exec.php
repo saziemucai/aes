@@ -118,7 +118,7 @@ a:active {
 		
 	<a rel="facebox" href=viewmidterm.php?id=' . $row["id"] . '><button style="width:140px; height:30px;"><b><font color="#003366">MIDTERM</font></b></button></a><br><br>
 	
-	<a rel="facebox" href=viewfinals.php?id=' . $row["id"] . '><button style="width:140px; height:30px;"><b><font color="#003366">FINAL</font></b></button></a><br><br>
+	<a rel="facebox" href=viewfinals.php?id=' . $row["id"] . '><button style="width:140px; height:30px;"><b><font color="#003366">FINALS</font></b></button></a><br><br>
 
 		
         <input type="submit" value="SUBMIT" id="button1">
@@ -146,7 +146,7 @@ $total = 0;
 $qryC = "SELECT * FROM temp";
 $resultC = mysql_query($qryC);
 $rowC = mysql_fetch_array($resultC);
-$student_id = $rowC['idno'];
+$idno = $rowC['idno'];
 $sy = $rowC['sy'];
 $sem =  $rowC['sem'];
 $subject =  $rowC['subject'];
@@ -157,12 +157,12 @@ $num = $rowC['num'];
 		
 				
 				for ($i=1; $i<=$num; $i++) {			
-				$answer = $_POST['answer'][($i+1)-1];	
-				$result = mysql_query("SELECT * FROM paper WHERE sy='$sy' and sem='$sem' and test_name='$test_name' and id='$i' and subject='$subject'");
+				$answer = $_POST['answer'][$i-1];	
+				$result = mysql_query("SELECT * FROM paper WHERE sy='$sy' and sem='$sem' and test_name='$test_name' and idd='$i' and subject='$subject'");
 				while ($qry = mysql_fetch_array($result)) {
 				$ans = $qry['answer'];
 				if ($answer == $ans) {
-				$resultA = mysql_query("SELECT points FROM paper WHERE sy='$sy' and sem='$sem' and test_name='$test_name' and id='$i' and answer='$answer' and subject='$subject'");
+				$resultA = mysql_query("SELECT points FROM paper WHERE sy='$sy' and sem='$sem' and test_name='$test_name' and idd='$i' and answer='$answer' and subject='$subject'");
 				while($qryA = mysql_fetch_array($resultA)) {
 				$score += $qryA['points'];
 				}
@@ -174,14 +174,14 @@ $num = $rowC['num'];
 				}
 
 				}
-	$resultB = mysql_query("SELECT SUM(points) from paper WHERE test_name='$test_name' and subject='$subject'  ");
+	$resultB = mysql_query("SELECT SUM(points) from paper WHERE test_name='$test_name' and subject='$subject' and sy='$sy' and sem='$sem'");
 	$qryB = mysql_fetch_array($resultB);
 	$total = $qryB['SUM(points)'];
 	
 				
 	
 	mysql_query("INSERT INTO student_answer (idno, sy, sem, subject, test_name, score, num_ans) VALUES ('$idno', '$sy', '$sem', '$subject', '$test_name', '$score', '$total')");
-
+	mysql_query("TRUNCATE temp");
 ?>	
 
 <body>

@@ -144,6 +144,14 @@ position: relative;
 left: 100px;
 }
 
+div.adminleft
+{
+margin:0 0 10px 0;
+position: relative;
+left: 250px;
+}
+
+
 #button:hover{
 background:#336699;
 cursor:pointer;

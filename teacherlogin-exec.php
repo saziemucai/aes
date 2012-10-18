@@ -72,7 +72,7 @@
 			exit();
 		}else {
 			//Login failed
-			header("location: login-failed.php");
+			header("location: login-failed2.php");
 			exit();
 		}
 	}else {
